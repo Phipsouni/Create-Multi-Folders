@@ -1,4 +1,6 @@
 import os
+import time
+import sys
 
 def create_folders_in_directory(directory, folder_names_file):
     with open(folder_names_file, 'r') as file:
@@ -18,3 +20,6 @@ if __name__ == "__main__":
     main_folder = read_file('path.txt')
     folder_names_file = "foldernames.txt"
     create_folders_in_directory(main_folder, folder_names_file)
+    print("Создание папок завершено")
+    time.sleep(3)
+    sys.exit()
