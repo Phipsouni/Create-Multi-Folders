@@ -10,8 +10,11 @@ def create_folders_in_directory(directory, folder_names_file):
             if not os.path.exists(folder_path):
                 os.makedirs(folder_path)
 
+def read_file(file_name):
+    with open(file_name, 'r') as file:
+        return file.readline().strip()
+
 if __name__ == "__main__":
-    with open('mainfolder.txt', 'r') as file:
-        main_folder = file.readline().strip()
+    main_folder = read_file('path.txt')
     folder_names_file = "foldernames.txt"
     create_folders_in_directory(main_folder, folder_names_file)
